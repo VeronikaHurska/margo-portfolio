@@ -1,5 +1,14 @@
 {
-  "title": "AAAAAAA",
+  "title": "Total Bebra",
   "text": "AAAAAAAA",
-  "pdf": "/uploads/redis-db-ua-1.pdf"
+  "pdf": "/uploads/redis-db-ua-1.pdf",
+  "description": "Hmmmmmmm meow meow ",
+  "images": [
+    "/uploads/me.jpg"
+  ],
+  "details": {
+    "challenge": "Moew\nMeow\nMeow \n",
+    "solution": "Meow\nWoof\nWoof ",
+    "results": []
+  }
 }

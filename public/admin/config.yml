@@ -3,7 +3,6 @@ backend:
   repo: VeronikaHurska/margo-portfolio
   branch: main
 
-
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
@@ -13,7 +12,27 @@ collections:
     folder: "src/data/projects"
     create: true
     format: "json"
+    slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Text", name: "text", widget: "text" }
-      - { label: "Presentation (PDF)", name: "pdf", widget: "file", media_types: ["application/pdf"] }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Description", name: "description", widget: "text", required: true, hint: "Short description shown in collapsed card" }
+      - label: "Details"
+        name: "details"
+        widget: "object"
+        fields:
+          - { label: "Challenge", name: "challenge", widget: "text", required: false, hint: "What problem were you solving?" }
+          - { label: "Solution", name: "solution", widget: "text", required: false, hint: "How did you solve it?" }
+          - label: "Results"
+            name: "results"
+            widget: "list"
+            required: false
+            field: { label: "Result", name: "result", widget: "string" }
+            hint: "Achievements, metrics, outcomes"
+      - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Technologies, skills, tools used" }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        required: false
+        field: { label: "Image", name: "image", widget: "image" }
+        hint: "Project images for the gallery"
+      - { label: "Project Link", name: "link", widget: "string", required: false, hint: "External project URL (optional)" }

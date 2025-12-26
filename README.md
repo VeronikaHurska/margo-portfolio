@@ -1,16 +1,98 @@
-# React + Vite
+# Margo Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, beautiful portfolio website built with React and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✨ Beautiful glassmorphism design with animated gradient backgrounds
+- 🎨 Orange and pink color theme throughout
+- 📱 Fully responsive layout
+- 🖼️ Portfolio cards with expandable details and image galleries
+- ⚡ Fast loading with optimized images
+- 🎭 Smooth animations and transitions
 
-## React Compiler
+## Portfolio Card Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Each project uses the following data structure:
 
-## Expanding the ESLint configuration
+```javascript
+{
+  title: "Project Name",
+  description: "Short description visible in collapsed state",
+  details: {
+    challenge: "The problem you were solving",
+    solution: "How you approached and solved it",
+    results: ["Metric 1", "Metric 2", "Achievement 3"]
+  },
+  tags: ["Skill1", "Technology2", "Tool3"],
+  images: ["image1.jpg", "image2.jpg", "image3.jpg"],
+  link: "https://project-url.com" // optional
+}
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Deployment to Netlify
+
+### Option 1: Connect Git Repository (Recommended)
+
+1. Push your code to GitHub/GitLab/Bitbucket
+2. Log in to [Netlify](https://netlify.com)
+3. Click "Add new site" → "Import an existing project"
+4. Connect your repository
+5. Netlify will auto-detect build settings from `netlify.toml`
+6. Click "Deploy site"
+
+### Option 2: Manual Deploy
+
+```bash
+# Build the project
+npm run build
+
+# Drag and drop the 'dist' folder to Netlify
+```
+
+The site will be automatically deployed and you'll get a live URL!
+
+## Adding Projects from Admin
+
+When you build your admin panel, save projects as JSON following the structure above. You can:
+
+1. Store in a CMS (Netlify CMS, Strapi, etc.)
+2. Use a headless CMS API
+3. Store in a JSON file and import it
+4. Fetch from a backend API
+
+Simply replace the `projects` array in `src/components/Projects.jsx` with your data source.
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Hero.jsx           # Header/intro section
+│   ├── PortfolioCard.jsx  # Individual project card
+│   └── Projects.jsx       # Projects grid container
+├── App.jsx                # Main app component
+└── index.css              # All styles
+```
+
+## Tech Stack
+
+- React 19.2
+- Vite 7.2
+- Pure CSS (no framework needed!)
